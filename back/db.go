@@ -3,14 +3,21 @@ package main
 import (
 	"context"
 	"fmt"
+	"os"
 
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 func Connectdb() *mongo.Client {
-	uri := "mongodb+srv://leastattner:IdiyWmR0hb6FjPdf@surfandgo.xamxbka.mongodb.net/?retryWrites=true&w=majority&appName=SURFANDGO"
+	err := godotenv.Load()
+	if err != nil {
+		panic(err)
+	}
+
+	uri := os.Getenv("DB_URL")
 
 	client, err := mongo.Connect(context.TODO(), options.Client().
 		ApplyURI(uri))
@@ -26,7 +33,7 @@ func Disconnectdb(client *mongo.Client) {
 }
 
 // getSpotDetailsFromName récupère les détails d'un spot de surf basé sur son nom de ville.
-func getSpotDetailsFromName(name string) (SpotDB) {
+func getSpotDetailsFromName(name string) SpotDB {
 	client := Connectdb()
 
 	// Accès à la collection "spots" de la base de données "surfAndGo".
@@ -50,7 +57,7 @@ func getSpotDetailsFromName(name string) (SpotDB) {
 	// Si une erreur survient (par exemple, si aucun document n'est trouvé), elle est gérée ici.
 	if err != nil {
 		// panic interrompt l'exécution du programme en cas d'erreur.
-		fmt.Print("erreur dans db" , err)
+		fmt.Print("erreur dans db", err)
 		panic(err)
 	}
 
@@ -71,10 +78,10 @@ func getAllSpots() []string {
 		panic(err)
 	}
 
-	var result []string 
-	
+	var result []string
+
 	//on parcours un à un les éléments de cursor (retour de find)
-	//ces élémenents sont de type SpotDB 
+	//ces élémenents sont de type SpotDB
 	for cursor.Next(context.TODO()) {
 		var spot SpotDB
 		// ici c'est comme dans la fonction précédente, on a un SpotDB et on le décode
@@ -82,11 +89,11 @@ func getAllSpots() []string {
 		if err != nil {
 			panic(err)
 		}
-		//on ajoute (append c'est comme push en js), le spot.City (donc le name) au tableau result 
+		//on ajoute (append c'est comme push en js), le spot.City (donc le name) au tableau result
 		result = append(result, spot.Name)
 	}
 
-	if err := cursor.Err() ; err != nil {
+	if err := cursor.Err(); err != nil {
 		panic(err)
 	}
 
