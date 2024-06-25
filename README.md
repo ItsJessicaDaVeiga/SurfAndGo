@@ -1,57 +1,80 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/QCl2HpkT)
+# SURF AND GO - En cours
 
-# BRICE PROJECT
+## Description du projet
 
-Surf_And_Go
+**SURF AND GO** est une application Android qui référence les meilleurs spots de surf du monde, développée dans le cadre d'un projet collectif. Cette application vise à fournir des informations détaillées sur les spots de surf, créer une communauté de surfeurs et offrir un référencement global des spots de surf.
 
-## 1. DESCRIPTION DE L'APPLICATON
+## Contexte du projet
 
-Météo des plages 2.0 pour surfeurs confirmés et débutants 
+Ce projet a été réalisé par une équipe de 5 personnes dans le cadre d'un exercice de développement mobile et back-end. L'objectif était de découvrir le développement mobile Android et son interaction avec une API back-end.
 
-## 2. OBJECTIF DE l'APPLICATION
+### Consignes pour le front-end (Android)
 
-- Donner des informations relatives aux spots de plages tels que :  
+- Création d'une application Android
+- Utilisation de Java ou Kotlin avec Android Studio
+- Conception UI avec une navigation simple depuis une liste
+- Parsing des données et connexion à une API
+- Exploration des patterns d'architecture, notamment MVVM
+- Apprentissage du langage objet, des protocoles et de l'héritage
 
-	    - Horaire de la marée
-		- Le vent
-		- Température de l’eau
-		- Niveau recommandé de surf
-		- Taille des vagues
-		- Note Brice de Nice
-		- Le type de plage (cailloux ou sables)
-		- Photo de la plage
-		- Plan et/ou itinéraire
-		- Location de matériel à coté ou pas ?
-		- commentaire des utilisateurs
-		- Début et fin de la saison pour le surf
-- Permettre un référencement global de tous les spots de surf, d’abord au niveau national puis international  
+### Consignes pour le back-end (API REST en GO)
 
-- Créer une communauté de surfer
+- Création d'une API REST en GO pour dynamiser l'application Android
+- Optimisation des appels API pour éviter la surcharge et les ralentissements
+- Gestion efficace des ressources serveur
 
-## 3. PERIMETRE  
- Application en français pour le MVP  
+## Fonctionnalités principales
 
-Modules existant sur web à intégrer sur l’app :  
-  - géolocalisation  
-  -  création de compte
-## 4. EQUIPEMENT DE NOS CIBLES
-L'application devra être compatible avec mobiles et tablettes ANDROID uniquement
+- Informations détaillées sur les spots de plages :
+  - Horaires des marées
+  - Conditions de vent
+  - Température de l'eau
+  - Niveau recommandé de surf
+  - Taille des vagues
+  - Note Brice de Nice
+  - Type de plage (cailloux ou sable)
+  - Photos des plages
+  - Plans et itinéraires
+  - Informations sur la location de matériel
+  - Commentaires des utilisateurs
+  - Saison de surf (début et fin)
+- Référencement global des spots de surf (national puis international)
+- Création d'une communauté de surfeurs
+- Géolocalisation
+- Création de compte utilisateur
+- Possibilité de poster un nouveau spot
+
+## Technologies utilisées
+
+- Kotlin avec Android Studio pour le développement frontend Android
+- Go pour le développement de l'API REST backend
+- API OpenWeather pour les données météorologiques
+
+## Installation
+
+1. Clonez ce dépôt : `git clone https://github.com/adatechschool/projet-collectif-mobile-surf_and_go.git`
+2. Ouvrez le projet Android dans Android Studio
+3. Configurez votre clé API OpenWeather dans le fichier de configuration approprié
+4. Compilez et exécutez l'application sur un émulateur ou un appareil Android
+5. Pour le backend, suivez les instructions d'installation de Go et lancez le serveur API
+
+## Utilisation
+
+[Ajoutez ici des instructions détaillées sur l'utilisation de l'application]
+
+## Périmètre
+
+- Application en français pour le MVP
+- Compatible avec les mobiles et tablettes Android uniquement
 
 ## Documentation
 
-[Documentation Kotlin Compose](https://www.w3schools.com/kotlin/kotlin_functions.php)
-
-
-## Tech Stack
-
-**Client:** Kotlin
-
-**Server:** Go
-
+Pour plus d'informations sur le développement avec Kotlin, consultez la [documentation officielle]: https://developer.android.com/kotlin?hl=fr
+https://kotlinlang.org/docs/home.html
 
 ## API Reference
 
-#### Weather API - OpenWeather
+**Weather API - OpenWeather**
 
 ```http
   GET /api/items
@@ -61,7 +84,7 @@ L'application devra être compatible avec mobiles et tablettes ANDROID uniquemen
 | :-------- | :------- | :------------------------- |
 | `api_key` | `string` | **Required**. Your API key |
 
-#### Get item
+**Get item**
 
 ```http
   GET /api/items/${id}
@@ -72,5 +95,17 @@ L'application devra être compatible avec mobiles et tablettes ANDROID uniquemen
 | `id`      | `string` | **Required**. Id of item to fetch |
 
 
-## trucs à ajouter
-- post d'un spot
+## Contribution
+
+Ce projet a été réalisé dans le cadre d'un exercice collectif. Les contributions externes ne sont pas acceptées pour le moment.
+
+## Auteurs et contact
+
+- Jessica: https://github.com/ItsJessicaDaVeiga
+- Timothée: https://github.com/TimotheeRoy
+- Amélie: https://github.com/AmelieMariaM
+- Nadège:https://github.com/npelcat
+- Léa: https://github.com/Lea9723
+
+
+Lien du projet : https://github.com/adatechschool/projet-collectif-mobile-surf_and_go
