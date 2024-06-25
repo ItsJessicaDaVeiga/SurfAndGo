@@ -58,10 +58,6 @@ Ce projet a été réalisé par une équipe de 5 personnes dans le cadre d'un ex
 4. Compilez et exécutez l'application sur un émulateur ou un appareil Android
 5. Pour le backend, suivez les instructions d'installation de Go et lancez le serveur API
 
-## Utilisation
-
-[Ajoutez ici des instructions détaillées sur l'utilisation de l'application]
-
 ## Périmètre
 
 - Application en français pour le MVP
